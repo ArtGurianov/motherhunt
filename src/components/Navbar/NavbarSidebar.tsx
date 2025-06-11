@@ -27,14 +27,14 @@ export const NavbarSidebar = ({
           <SheetTitle>{"Menu"}</SheetTitle>
         </SheetHeader>
         <ScrollArea className="flex flex-col overflow-y-auto h-full pb-2">
-          {items.map(({ href, children, isActive }) => (
+          {items.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className="w-full text-left p-4 flex items-center text-base font-medium"
               onClick={() => onOpenChange(false)}
             >
-              {children}
+              {label}
             </Link>
           ))}
           <div className="border-t">
