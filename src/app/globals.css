@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 :root {
-  --border-radius: 5px;
+  --border-radius: 8px;
   --box-shadow-x: 4px;
   --box-shadow-y: 4px;
   --reverse-box-shadow-x: -4px;
@@ -12,14 +12,16 @@
   --base-font-weight: 500;
 
   --background: oklch(96% 0.052 175.5);
+  --primary: oklch(30% 0.105 329);
   --secondary-background: oklch(81% 0.084 174.2);
-  --foreground: oklch(0% 0 0);
-  --main-foreground: oklch(0% 0 0);
+  --foreground: oklch(30% 0.105 329);
+  --main-foreground: oklch(30% 0.105 329);
+  --accent-foreground: oklch(69.82% 0.3188 329.66);
 
-  --main: oklch(67.47% 0.1725 259.5);
-  --border: oklch(0% 0 0);
-  --ring: oklch(0% 0 0);
-  --overlay: oklch(0% 0 0 / 0.8);
+  --main: oklch(91% 0 0);
+  --border: oklch(30% 0.105 329);
+  --ring: oklch(30% 0.105 329);
+  --overlay: oklch(30% 0.105 329);
 
   --shadow: var(--box-shadow-x) var(--box-shadow-y) 0px 0px var(--border);
 }
@@ -27,9 +29,11 @@
 @theme inline {
   --color-main: var(--main);
   --color-background: var(--background);
+  --color-primary: var(--primary);
   --color-secondary-background: var(--secondary-background);
   --color-foreground: var(--foreground);
   --color-main-foreground: var(--main-foreground);
+  --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-overlay: var(--overlay);
   --color-ring: var(--ring);
@@ -93,7 +97,7 @@
 body,
 .scrollbar {
   --sb-track-color: var(--secondary-background);
-  --sb-thumb-color: #000000;
+  --sb-thumb-color: #481247;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -114,7 +118,7 @@ body::-webkit-scrollbar-track,
 }
 
 body::-webkit-scrollbar-track {
-  border-left: 4px solid #000;
+  border-left: 4px solid #481247;
 }
 
 body::-webkit-scrollbar-thumb,
@@ -150,7 +154,7 @@ body::-webkit-scrollbar-thumb,
 }
 
 .command-scrollbar::-webkit-scrollbar-thumb {
-  background: #000;
+  background: #481247;
 }
 
 @supports not selector(::-webkit-scrollbar) {
@@ -160,6 +164,6 @@ body::-webkit-scrollbar-thumb,
   }
 
   .command-scrollbar {
-    scrollbar-color: #000 transparent;
+    scrollbar-color: #481247 transparent;
   }
 }

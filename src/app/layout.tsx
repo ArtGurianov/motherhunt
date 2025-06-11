@@ -28,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex flex-col items-center ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`flex flex-col items-center ${geistSans.variable} ${geistMono.variable} overflow-x-clip antialiased`}
       >
         <Navbar />
-        <main className="min-h-content">{children}</main>
+        <main className="flex flex-col min-h-content w-full">{children}</main>
         <Footer />
       </body>
     </html>
