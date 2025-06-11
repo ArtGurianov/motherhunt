@@ -65,7 +65,7 @@ export const Navbar = () => {
         className="border-r-4 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
       >
         <Button asChild variant="ghost" size="reset">
-          <Link href="/" className="px-6 py-1 h-full">
+          <Link href="/" className="px-2 sm:px-6 py-1 h-full">
             <Image
               src="/motherhunt-logo.png"
               width="0"
