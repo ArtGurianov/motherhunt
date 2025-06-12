@@ -8,7 +8,7 @@ import { NAVBAR_ITEMS } from "./constants";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { NavbarItem } from "./NavbarItem";
-import { ArrowBigRight, MenuIcon } from "lucide-react";
+import { ArrowBigRight, ChevronsRightIcon } from "lucide-react";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import { cn } from "@/lib/utils";
 
@@ -64,15 +64,15 @@ export const Navbar = () => {
         ref={imageContainerRef}
         className="border-r-4 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
       >
-        <Button asChild variant="ghost" size="reset">
-          <Link href="/" className="px-2 sm:px-6 py-1 h-full">
+        <Button asChild variant="ghost" size="reset" className="h-full w-auto">
+          <Link href="/" className="px-2 sm:px-6 py-1 h-full w-auto">
             <Image
               src="/motherhunt-logo.png"
               width="0"
               height="0"
-              sizes="100vw"
+              sizes="100vh"
               alt="MotherHunt"
-              className="h-full w-full"
+              className="h-18 w-64"
               priority
             />
           </Link>
@@ -97,7 +97,7 @@ export const Navbar = () => {
         })}
       >
         <Button variant="ghost" onClick={() => setIsSidebarOpen(true)}>
-          <MenuIcon />
+          <ChevronsRightIcon />
         </Button>
       </div>
 
