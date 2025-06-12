@@ -8,14 +8,18 @@ import { NAVBAR_ITEMS } from "./constants";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { NavbarItem } from "./NavbarItem";
-import { ArrowBigRight, ChevronsRightIcon } from "lucide-react";
+import {
+  ArrowBigRight,
+  ChevronsLeftIcon,
+  ChevronsRightIcon,
+} from "lucide-react";
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const [isBurgerMenu, setIsBurgerMenu] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isBtnHovered, setIsBtnHovered] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const pathname = usePathname();
 
   const { width: windowWidth } = useWindowSize();
@@ -34,12 +38,14 @@ export const Navbar = () => {
 
   const displayItems = (
     <div className="flex justify-center items-center px-6 gap-2">
-      {NAVBAR_ITEMS.map(({ href, label }) => (
+      {NAVBAR_ITEMS.map(({ href, label }, index) => (
         <NavbarItem
           key={href}
           href={href}
-          isActive={pathname === href && !isBtnHovered}
-          onHoverStateChange={(value: boolean) => setIsBtnHovered(value)}
+          isActive={pathname === href}
+          hoveredIndex={hoveredIndex}
+          currentIndex={index}
+          onHoverStateChange={(value: number | null) => setHoveredIndex(value)}
           label={label}
         />
       ))}
@@ -62,7 +68,7 @@ export const Navbar = () => {
     <nav className="w-full h-nav flex justify-start bg-secondary-background/30 items-center sticky z-10 top-0 border-b-4 shadow-secondary-background shadow-xl overflow-clip">
       <div
         ref={imageContainerRef}
-        className="border-r-4 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
+        className="border-r-4 border-b-4 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
       >
         <Button asChild variant="ghost" size="reset" className="h-full w-auto">
           <Link href="/" className="px-2 sm:px-6 py-1 h-full w-auto">
@@ -97,7 +103,7 @@ export const Navbar = () => {
         })}
       >
         <Button variant="ghost" onClick={() => setIsSidebarOpen(true)}>
-          <ChevronsRightIcon />
+          {isSidebarOpen ? <ChevronsLeftIcon /> : <ChevronsRightIcon />}
         </Button>
       </div>
 
