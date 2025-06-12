@@ -36,8 +36,9 @@ export const NavbarSidebar = ({
             {"Menu"}
           </SheetTitle>
         </SheetHeader>
-        <ScrollArea className="flex flex-col w-full overflow-y-auto h-full pb-2">
-          <div className="flex flex-col w-full justify-center items-center gap-6 mt-4 px-4">
+
+        <div className="flex flex-col gap-6 grow">
+          <div className="flex flex-col grow w-full justify-center items-center gap-6 px-4">
             {items.map(({ href, label }) => (
               <div
                 key={href}
@@ -68,21 +69,21 @@ export const NavbarSidebar = ({
               </div>
             ))}
           </div>
-          <div className="absolute w-full flex justify-center items-center bottom-6 px-8">
+          <div className="w-full flex justify-center items-center px-8 mb-8">
             <Button
               asChild
               className="border-0 w-full py-2 rounded-none text-lg"
               size="lg"
             >
               <Link href="https://app.motherhunt.com" className="h-full">
-                <span className="text-3xl flex gap-1 items-center justify-center h-full">
+                <span className="text-4xl flex gap-1 items-center justify-center h-full">
                   <ArrowBigRight />
                   {"Platform"}
                 </span>
               </Link>
             </Button>
           </div>
-        </ScrollArea>
+        </div>
       </SheetContent>
     </Sheet>
   );
