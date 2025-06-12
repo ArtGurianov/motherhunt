@@ -8,9 +8,8 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { NavbarItemData } from "./types";
 import Image from "next/image";
+import { NavbarItemData } from "./types";
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { ArrowBigRight } from "lucide-react";
