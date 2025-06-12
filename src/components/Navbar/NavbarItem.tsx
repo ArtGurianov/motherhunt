@@ -19,28 +19,31 @@ export const NavbarItem = ({
   onHoverStateChange,
 }: NavbarItemProps) => {
   return (
-    <div className="relative">
-      <Button
-        asChild
-        size="lg"
-        variant="ghost"
-        onMouseOver={() => onHoverStateChange(currentIndex)}
-        onMouseOut={() => onHoverStateChange(null)}
-      >
-        <Link href={href}>{label}</Link>
-      </Button>
-      <Image
-        className="absolute -z-10 top-0 left-0"
-        src={
-          (isActive && !hoveredIndex) || hoveredIndex === currentIndex
-            ? "/capture-btn-active.png"
-            : "/capture-btn-inactive.png"
-        }
-        alt="navbar-btn-icon"
-        sizes="100vh"
-        priority
-        fill
-      />
+    <div className="flex items-center justify-center h-full aspect-square p-1">
+      <div className="relative w-full h-full">
+        <Button
+          asChild
+          className="text-xl font-mono h-full w-full"
+          size="reset"
+          variant="ghost"
+          onMouseOver={() => onHoverStateChange(currentIndex)}
+          onMouseOut={() => onHoverStateChange(null)}
+        >
+          <Link href={href}>{label}</Link>
+        </Button>
+        <Image
+          className="absolute -z-10 top-0 left-0"
+          src={
+            (isActive && !hoveredIndex) || hoveredIndex === currentIndex
+              ? "/capture-btn-active.png"
+              : "/capture-btn-inactive.png"
+          }
+          alt="navbar-btn-icon"
+          sizes="100vh"
+          priority
+          fill
+        />
+      </div>
     </div>
   );
 };

@@ -167,13 +167,3 @@ body::-webkit-scrollbar-thumb,
     scrollbar-color: #481247 transparent;
   }
 }
-
-/* @layer utilities {
-  .filter-capture-inactive {
-    clip-path: url('#capture-inactive');
-  }
-
-  .filter-capture-active {
-    clip-path: url('#capture-active');
-  }
-} */

@@ -37,7 +37,7 @@ export const Navbar = () => {
   }, [windowWidth]);
 
   const displayItems = (
-    <div className="flex justify-center items-center px-6 gap-2">
+    <div className="flex justify-center items-center px-6 gap-2 h-full">
       {NAVBAR_ITEMS.map(({ href, label }, index) => (
         <NavbarItem
           key={href}
@@ -49,23 +49,25 @@ export const Navbar = () => {
           label={label}
         />
       ))}
-      <Button
-        asChild
-        className="border-0 px-8 py-2 rounded-none text-lg"
-        size="lg"
-      >
-        <Link href="https://app.motherhunt.com" className="h-full">
-          <span className="text-3xl flex gap-1 items-center justify-center h-full">
-            <ArrowBigRight />
-            {"Platform"}
-          </span>
-        </Link>
-      </Button>
+      <div>
+        <Button
+          asChild
+          className="border-0 px-8 py-2 rounded-none text-lg"
+          size="lg"
+        >
+          <Link href="https://app.motherhunt.com" className="h-full">
+            <span className="text-3xl flex gap-1 items-center justify-center h-full">
+              <ArrowBigRight />
+              {"Platform"}
+            </span>
+          </Link>
+        </Button>
+      </div>
     </div>
   );
 
   return (
-    <nav className="w-full h-nav flex justify-start bg-secondary-background/30 items-center sticky z-10 top-0 border-b-4 shadow-secondary-background shadow-xl overflow-clip">
+    <nav className="w-full h-nav flex justify-start bg-background/50 items-center sticky z-10 top-0 border-b-4 shadow-secondary-background shadow-xl overflow-clip">
       <div
         ref={imageContainerRef}
         className="border-r-4 border-b-4 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
@@ -93,7 +95,9 @@ export const Navbar = () => {
         }}
       />
 
-      <div className={cn("flex grow justify-end", { hidden: isBurgerMenu })}>
+      <div
+        className={cn("flex grow justify-end h-full", { hidden: isBurgerMenu })}
+      >
         {displayItems}
       </div>
 
@@ -108,7 +112,7 @@ export const Navbar = () => {
       </div>
 
       {/* CHECKING DIMENSIONS */}
-      <div ref={itemsContainerRef} className="absolute -z-50 invisible">
+      <div ref={itemsContainerRef} className="absolute z-50 invisible h-nav">
         {displayItems}
       </div>
     </nav>

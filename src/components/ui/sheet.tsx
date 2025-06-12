@@ -59,6 +59,7 @@ function SheetContent({
       <SheetPrimitive.Content
         data-slot="sheet-content"
         className={cn(
+          "bg-[linear-gradient(to_right,#85D3BD_1px,transparent_1px),linear-gradient(to_bottom,#85D3BD,transparent_1px)] bg-[size:70px_70px]",
           "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 border-2 border-border transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
           side === "right" &&
             "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
@@ -73,22 +74,31 @@ function SheetContent({
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="absolute right-4 top-4 rounded-base ring-offset-white focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>
   );
 }
 
-function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
+function SheetHeader({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-header"
-      className={cn("flex flex-col gap-1.5 p-4", className)}
+      className={cn(
+        "flex flex-col gap-1.5 p-4 shadow-primary/50 shadow-xl",
+        className
+      )}
       {...props}
-    />
+    >
+      {children}
+      <SheetPrimitive.Close className="text-background absolute right-4 rounded-base disabled:pointer-events-none">
+        <X className="h-8 w-8" />
+        <span className="sr-only">{"Close"}</span>
+      </SheetPrimitive.Close>
+    </div>
   );
 }
 
