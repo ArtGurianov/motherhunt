@@ -240,7 +240,7 @@ export default function DataTableDemo() {
           <TableHeader className="font-heading">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow
-                className="bg-secondary-background text-foreground"
+                className="bg-secondary text-foreground"
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => {
@@ -262,7 +262,7 @@ export default function DataTableDemo() {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="bg-secondary-background text-foreground data-[state=selected]:bg-main data-[state=selected]:text-main-foreground"
+                  className="bg-secondary text-foreground data-[state=selected]:bg-main data-[state=selected]:text-main-foreground"
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >

@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import { OTPInput, OTPInputContext } from "input-otp"
-import { Dot } from "lucide-react"
+import { OTPInput, OTPInputContext } from "input-otp";
+import { Dot } from "lucide-react";
 
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function InputOTP({
   className,
   containerClassName,
   ...props
 }: React.ComponentProps<typeof OTPInput> & {
-  containerClassName?: string
+  containerClassName?: string;
 }) {
   return (
     <OTPInput
       data-slot="input-otp"
       containerClassName={cn(
         "flex items-center gap-2 has-disabled:opacity-50",
-        containerClassName,
+        containerClassName
       )}
       className={cn("disabled:cursor-not-allowed", className)}
       {...props}
     />
-  )
+  );
 }
 
 function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
@@ -34,7 +34,7 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
       className={cn("flex items-center", className)}
       {...props}
     />
-  )
+  );
 }
 
 function InputOTPSlot({
@@ -42,17 +42,17 @@ function InputOTPSlot({
   className,
   ...props
 }: React.ComponentProps<"div"> & { index: number }) {
-  const inputOTPContext = React.useContext(OTPInputContext)
-  const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {}
+  const inputOTPContext = React.useContext(OTPInputContext);
+  const { char, hasFakeCaret, isActive } = inputOTPContext?.slots[index] ?? {};
 
   return (
     <div
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "relative flex size-10 items-center justify-center border-y-2 border-r-2 border-border bg-secondary-background text-sm font-base text-foreground first:rounded-l-base first:border-l-2 last:rounded-r-base transition-all",
+        "relative flex size-10 items-center justify-center border-y-2 border-r-2 border-border bg-secondary text-sm font-base text-foreground first:rounded-l-base first:border-l-2 last:rounded-r-base transition-all",
         isActive && "z-10 ring-1 ring-ring",
-        className,
+        className
       )}
       {...props}
     >
@@ -63,7 +63,7 @@ function InputOTPSlot({
         </div>
       )}
     </div>
-  )
+  );
 }
 
 function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
@@ -71,7 +71,7 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
     <div data-slot="input-otp-separator" role="separator" {...props}>
       <Dot className="size-4" />
     </div>
-  )
+  );
 }
 
-export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator };

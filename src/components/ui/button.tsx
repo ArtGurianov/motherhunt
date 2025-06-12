@@ -12,12 +12,14 @@ const buttonVariants = cva(
       variant: {
         default:
           "text-main-foreground bg-main border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none",
+        secondary:
+          "text-main-foreground bg-secondary border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none",
         outline:
-          "hover:bg-accent-foreground/70 border-2 border-border/0 hover:border-border/100 rounded-full font-mono",
+          "hover:bg-accent-foreground border-2 border-border/0 hover:border-border/100 rounded-full font-mono",
         ghost: "text-main-foreground bg-none border-none shadow-none",
         noShadow: "text-main-foreground bg-main border-2 border-border",
         neutral:
-          "bg-secondary-background text-foreground border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none",
+          "bg-secondary text-foreground border-2 border-border shadow-shadow hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none",
         reverse:
           "text-main-foreground bg-main border-2 border-border hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY hover:shadow-shadow",
       },

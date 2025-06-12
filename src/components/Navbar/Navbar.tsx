@@ -50,11 +50,7 @@ export const Navbar = () => {
         />
       ))}
       <div className="ml-4">
-        <Button
-          asChild
-          className="border-0 px-8 py-2 rounded-none text-lg"
-          size="lg"
-        >
+        <Button asChild className="px-8 py-2 text-lg" size="lg">
           <Link href="https://app.motherhunt.com" className="h-full">
             <span className="text-3xl flex gap-1 items-center justify-center h-full">
               <ArrowBigRight />
@@ -67,10 +63,10 @@ export const Navbar = () => {
   );
 
   return (
-    <nav className="w-full h-nav flex justify-start bg-background/50 items-center sticky z-10 top-0 border-b-4 shadow-secondary-background shadow-xl overflow-clip">
+    <nav className="w-full h-nav flex justify-start bg-background/50 items-center sticky z-10 top-0 border-b-4 shadow-secondary shadow-xl overflow-clip">
       <div
         ref={imageContainerRef}
-        className="border-r-4 border-b-4 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
+        className="border-r-6 border-b-2 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"
       >
         <Button asChild variant="ghost" size="reset" className="h-full w-auto">
           <Link href="/" className="px-2 sm:px-6 py-1 h-full w-auto">

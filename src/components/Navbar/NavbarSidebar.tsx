@@ -69,11 +69,7 @@ export const NavbarSidebar = ({
             ))}
           </div>
           <div className="w-full flex justify-center items-center px-8 mb-8">
-            <Button
-              asChild
-              className="border-0 w-full py-2 rounded-none text-lg"
-              size="lg"
-            >
+            <Button asChild className="w-full py-2 text-lg" size="lg">
               <Link href="https://app.motherhunt.com" className="h-full">
                 <span className="text-4xl flex gap-1 items-center justify-center h-full">
                   <ArrowBigRight />
