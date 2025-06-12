@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex grow justify-start items-center">
-      <PageSection className="flex flex-col lg:flex-row w-full">
+      <PageSection className="flex flex-col lg:flex-row w-full justify-center items-center">
         <div className="w-full lg:w-1/2 flex flex-col gap-8 justify-center items-center py-8">
           <h1 className="text-5xl text-center">
             {"Scout. Publish."}
