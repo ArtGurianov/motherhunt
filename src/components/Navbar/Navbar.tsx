@@ -37,7 +37,7 @@ export const Navbar = () => {
   }, [windowWidth]);
 
   const displayItems = (
-    <div className="flex justify-center items-center px-6 gap-2 h-full">
+    <div className="flex justify-center items-center px-6 gap-4 h-full">
       {NAVBAR_ITEMS.map(({ href, label }, index) => (
         <NavbarItem
           key={href}
@@ -49,7 +49,7 @@ export const Navbar = () => {
           label={label}
         />
       ))}
-      <div>
+      <div className="ml-4">
         <Button
           asChild
           className="border-0 px-8 py-2 rounded-none text-lg"

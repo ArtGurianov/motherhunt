@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <div className="flex grow justify-start items-center">
       <PageSection className="flex flex-col lg:flex-row w-full">
-        <div className="w-full lg:w-1/2 flex flex-col gap-4 justify-center items-center py-8">
+        <div className="w-full lg:w-1/2 flex flex-col gap-8 justify-center items-center py-8">
           <p className="text-5xl font-bold text-center">
             {"Scout. Publish. Deal. Repeat."}
           </p>
-          <p className="text-center">
+          <p className="text-center font-mono text-lg">
             {
               "Connecting street scouters to mother agencies worldwide for new-face models placement within a revolutionary web3 auction marketplace."
             }
