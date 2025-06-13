@@ -1,12 +1,14 @@
 import { PageSection } from "@/components/PageSection";
-import { HeroAnimationSvgUrl } from "@/components/svg";
+import { Quote } from "@/components/Quote/Quote";
+import HeroAnimationSvgUrl from "@/components/svg/HeroAnimation.svg?url";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex grow justify-start items-center">
+    <div className="flex flex-col gap-6 grow justify-start items-center pb-12">
       <PageSection className="flex flex-col lg:flex-row w-full justify-center items-center">
         <div className="w-full lg:w-1/2 flex flex-col gap-8 justify-center items-center py-8">
           <h1 className="text-5xl text-center">
@@ -41,6 +43,49 @@ export default function Home() {
             priority
           />
         </div>
+      </PageSection>
+      <PageSection className="flex flex-col grow justify-start items-center">
+        <Card className="w-full max-w-lg pt-0 overflow-clip">
+          <CardTitle className="bg-linear-to-tr from-accent-foreground to-accent-foreground/50 border-b-2 py-2">
+            <CardHeader className="text-4xl font-bold text-center">
+              {"🛸 Our Mission ✨"}
+            </CardHeader>
+          </CardTitle>
+          <CardContent>
+            <ul className="flex flex-col justify-center items-centerw-full px-2 gap-4">
+              <li>
+                <Quote className="text-xl font-medium py-1 mb-1">
+                  {"From ghetto to the spotlight"}
+                </Quote>
+                <p className="font-mono text-md px-2">
+                  {
+                    "We help creating life-changing opportunities for good looking individuals."
+                  }
+                </p>
+              </li>
+              <li>
+                <Quote className="text-xl font-medium py-1 mb-1">
+                  {"Effortless passive income for anyone"}
+                </Quote>
+                <p className="font-mono text-md px-2">
+                  {
+                    "Read through our simple scouting guide and start earning with minimum time investment - just keep an eye out, wherever you go."
+                  }
+                </p>
+              </li>
+              <li>
+                <Quote className="text-xl font-medium py-1 mb-1">
+                  {"Agencies go Global"}
+                </Quote>
+                <p className="font-mono text-md px-2">
+                  {
+                    "Agencies can now collaborate with scouters from anywhere and find those hidden gems in places they could never reach before."
+                  }
+                </p>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
       </PageSection>
     </div>
   );
