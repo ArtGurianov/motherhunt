@@ -28,7 +28,7 @@ export default async function Home() {
         ...each.fields,
         name: each.fields.name,
         url: each.fields.url,
-        logoUrl: (each.fields.logo as any)?.fields.file.url,
+        logoUrl: each.fields.logo?.fields.file?.url || "",
       }))
       .reverse();
   } catch {

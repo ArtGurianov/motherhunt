@@ -5,6 +5,6 @@ export type DisplayAgencyContentfulSkeleton = {
   fields: {
     name: EntryFieldTypes.Text;
     url: EntryFieldTypes.Text;
-    logo: any;
+    logo: EntryFieldTypes.AssetLink;
   };
 };
