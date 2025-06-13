@@ -51,37 +51,16 @@
   --font-weight-base: var(--base-font-weight);
   --font-weight-heading: var(--heading-font-weight);
 
-  --animate-marquee: marquee 5s linear infinite;
-  --animate-marquee2: marquee2 5s linear infinite;
-
   --spacing-container: 1300px;
 
   --height-nav: calc(var(--spacing) * 24);
   --height-footer: calc(var(--spacing) * 8);
   --height-content: calc(100svh - var(--height-nav) - var(--height-footer));
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  @keyframes marquee2 {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
 }
 
 @layer base {
   body {
-    @apply text-foreground font-base bg-background bg-[linear-gradient(to_right,#85D3BD_1px,transparent_1px),linear-gradient(to_bottom,#85D3BD,transparent_1px)] bg-[size:70px_70px];
+    @apply text-foreground font-base bg-background bg-[linear-gradient(to_right,#85D3BD_1px,transparent_1px),linear-gradient(to_bottom,#85D3BD,transparent_1px)] bg-[size:70px_70px] overflow-x-clip;
   }
 
   h1,
