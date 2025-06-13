@@ -36,6 +36,18 @@ export const Navbar = () => {
     );
   }, [windowWidth]);
 
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navbarOpacity = Math.min(scrollY / 100, 1);
+
   const displayItems = (
     <div className="flex justify-center items-center px-6 gap-4 h-full">
       {NAVBAR_ITEMS.map(({ href, label }, index) => (
@@ -63,7 +75,11 @@ export const Navbar = () => {
   );
 
   return (
-    <nav className="w-full h-nav flex justify-start bg-background/50 items-center sticky z-10 top-0 border-b-4 shadow-secondary shadow-xl overflow-clip">
+    <nav className="w-full h-nav flex justify-start items-center sticky z-10 top-0 border-b-4 shadow-secondary shadow-xl overflow-clip">
+      <div
+        style={{ opacity: navbarOpacity }}
+        className="absolute bg-background/90 h-nav w-full -z-10 top-0 left-0"
+      />
       <div
         ref={imageContainerRef}
         className="border-r-6 border-b-2 border-accent-foreground h-full bg-primary shrink-0 max-w-[calc(100vw-var(--spacing)*16)]"

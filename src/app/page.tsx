@@ -3,10 +3,38 @@ import { Quote } from "@/components/Quote/Quote";
 import HeroAnimationSvgUrl from "@/components/svg/HeroAnimation.svg?url";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { getContentfulEntriesByType } from "@/config/contentful/client";
+import { DisplayAgencyContentfulSkeleton } from "@/lib/types/contentful";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+interface DisplayAgencyData {
+  name: string;
+  url: string;
+  logoUrl: string;
+}
+
+export default async function Home() {
+  let agencies: DisplayAgencyData[];
+
+  try {
+    const data =
+      await getContentfulEntriesByType<DisplayAgencyContentfulSkeleton>(
+        "displayAgency"
+      );
+
+    agencies = data
+      .map((each) => ({
+        ...each.fields,
+        name: each.fields.name,
+        url: each.fields.url,
+        logoUrl: (each.fields.logo as any)?.fields.file.url,
+      }))
+      .reverse();
+  } catch {
+    throw new Error("Unable to get data from CMS");
+  }
+
   return (
     <div className="flex flex-col gap-6 grow justify-start items-center pb-12">
       <PageSection className="flex flex-col lg:flex-row w-full justify-center items-center">
@@ -86,6 +114,13 @@ export default function Home() {
             </ul>
           </CardContent>
         </Card>
+      </PageSection>
+      <PageSection className="flex flex-col grow justify-start items-center">
+        <ul>
+          {agencies.map(({ name }) => (
+            <li key={name}>{name}</li>
+          ))}
+        </ul>
       </PageSection>
     </div>
   );
