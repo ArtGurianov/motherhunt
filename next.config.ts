@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    mdxRs: {
+      mdxType: "gfm",
+    },
+  },
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     remotePatterns: [
       {
@@ -41,5 +48,8 @@ const nextConfig: NextConfig = {
 };
 
 const withNextIntl = createNextIntlPlugin();
+const withMDX = createMDX({
+  extension: /\.(md|mdx)$/,
+});
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(withMDX(nextConfig));
