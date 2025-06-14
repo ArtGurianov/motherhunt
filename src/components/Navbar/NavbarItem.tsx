@@ -1,7 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import type { NavbarItemData } from "./types";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 interface NavbarItemProps extends NavbarItemData {
   onHoverStateChange: (_: number | null) => void;
@@ -12,12 +15,14 @@ interface NavbarItemProps extends NavbarItemData {
 
 export const NavbarItem = ({
   href,
-  label,
+  translationKey,
   isActive,
   hoveredIndex,
   currentIndex,
   onHoverStateChange,
 }: NavbarItemProps) => {
+  const t = useTranslations("NAV");
+
   return (
     <div className="flex items-center justify-center h-full aspect-square p-1">
       <div className="relative w-full h-full">
@@ -29,7 +34,7 @@ export const NavbarItem = ({
           onMouseOver={() => onHoverStateChange(currentIndex)}
           onMouseOut={() => onHoverStateChange(null)}
         >
-          <Link href={href}>{label}</Link>
+          <Link href={href}>{t(translationKey)}</Link>
         </Button>
         <Image
           className="absolute -z-10 top-0 left-0"

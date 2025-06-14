@@ -1,5 +1,17 @@
 {
   "SHARED": {},
+  "NAV": {
+    "home": "首页",
+    "guides": "指南",
+    "blog": "博客",
+    "faq": "常见问题",
+    "platform-btn-label": "平台",
+    "menu-title": "菜单"
+  },
+  "FOOTER": {
+    "ecosystem": "生态系统",
+    "rights": "版权所有。"
+  },
   "HOME": {
     "HERO": {
       "title-start": "发现。发布。",

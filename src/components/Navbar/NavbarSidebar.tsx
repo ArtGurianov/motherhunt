@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import { ArrowBigRight } from "lucide-react";
 import { LangSwitcher } from "@/components/LangSwitcher/LangSwitcher";
+import { useTranslations } from "next-intl";
 
 interface NavbarSidebarProps {
   items: NavbarItemData[];
@@ -26,6 +27,7 @@ export const NavbarSidebar = ({
   isOpen,
   onOpenChange,
 }: NavbarSidebarProps) => {
+  const t = useTranslations("NAV");
   const pathname = usePathname();
 
   return (
@@ -33,14 +35,14 @@ export const NavbarSidebar = ({
       <SheetContent side="left" className="p-0 transition-none">
         <SheetHeader className="p-4 border-b bg-primary">
           <SheetTitle className="font-sans text-background font-semibold text-2xl">
-            {"Menu"}
+            {t("menu-title")}
           </SheetTitle>
         </SheetHeader>
 
         <div className="flex flex-col gap-6 grow">
           <LangSwitcher className="grid-cols-4 gap-4 px-4" />
           <div className="flex flex-col grow w-full justify-center items-center gap-6 px-4">
-            {items.map(({ href, label }) => (
+            {items.map(({ href, translationKey }) => (
               <div
                 key={href}
                 className="flex items-center justify-center w-full max-w-[320px]"
@@ -52,7 +54,7 @@ export const NavbarSidebar = ({
                     size="reset"
                     variant="ghost"
                   >
-                    <Link href={href}>{label}</Link>
+                    <Link href={href}>{t(translationKey)}</Link>
                   </Button>
                   <Image
                     className="absolute -z-10 top-0 left-0"

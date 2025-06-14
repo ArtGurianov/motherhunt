@@ -1,12 +1,9 @@
-import { getAppLocale } from "@/lib/utils";
 import { createClient, EntrySkeletonType } from "contentful";
 
 if (!process.env.CONTENTFUL_SPACE_ID)
   throw new Error("env variable CONTENTFUL_SPACE_ID not provided!");
 if (!process.env.CONTENTFUL_ACCESS_TOKEN)
   throw new Error("env variable CONTENTFUL_ACCESS_TOKEN not provided!");
-
-const appLocale = getAppLocale();
 
 export const contentfulClient = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -21,7 +18,6 @@ export const getContentfulEntriesByType = async <T extends EntrySkeletonType>(
     await contentfulClient.withoutUnresolvableLinks.getEntries<T>({
       content_type: type,
       limit,
-      locale: appLocale,
     });
 
   return response.items;
@@ -34,7 +30,6 @@ export const getContentfulEntryBySlug = async <T extends EntrySkeletonType>(
   const queryOptions = {
     content_type: type,
     "fields.slug[match]": slug,
-    locale: appLocale,
   };
   const queryResult =
     await contentfulClient.withoutUnresolvableLinks.getEntries<T>(queryOptions);

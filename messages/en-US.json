@@ -1,5 +1,17 @@
 {
   "SHARED": {},
+  "NAV": {
+    "home": "Home",
+    "guides": "Guides",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "platform-btn-label": "Platform",
+    "menu-title": "Menu"
+  },
+  "FOOTER": {
+    "ecosystem": "Ecosystem",
+    "rights": "Rights reserved."
+  },
   "HOME": {
     "HERO": {
       "title-start": "Scout. Publish.",

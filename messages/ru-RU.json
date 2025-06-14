@@ -1,5 +1,17 @@
 {
   "SHARED": {},
+  "NAV": {
+    "home": "Главная",
+    "guides": "Гайды",
+    "blog": "Блог",
+    "faq": "FAQ",
+    "platform-btn-label": "Платформа",
+    "menu-title": "Меню"
+  },
+  "FOOTER": {
+    "ecosystem": "Экосистема",
+    "rights": "Права защищены."
+  },
   "HOME": {
     "HERO": {
       "title-start": "Находи. Размещай.",
@@ -20,7 +32,7 @@
     "AGENCIES": {
       "title": "Партнерства:",
       "apply-before": "Вы — материнское агентство?",
-      "apply-action": "Подайте заявку здесь",
+      "apply-action": "Подайте заявку",
       "apply-after": "чтобы присоединиться!"
     }
   }

@@ -1,6 +1,6 @@
 export const NAVBAR_ITEMS = [
-  { href: "/", label: "Home" },
-  { href: "/guides", label: "Guides" },
-  { href: "/blog", label: "Blog" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/", translationKey: "home" },
+  { href: "/guides", translationKey: "guides" },
+  { href: "/blog", translationKey: "blog" },
+  { href: "/faq", translationKey: "faq" },
 ];

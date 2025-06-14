@@ -1,5 +1,17 @@
 {
   "SHARED": {},
+  "NAV": {
+    "home": "Inicio",
+    "guides": "Guías",
+    "blog": "Blog",
+    "faq": "Preguntas frecuentes",
+    "platform-btn-label": "Plataforma",
+    "menu-title": "Menú"
+  },
+  "FOOTER": {
+    "ecosystem": "Ecosistema",
+    "rights": "Todos los derechos reservados."
+  },
   "HOME": {
     "HERO": {
       "title-start": "Descubre. Publica.",

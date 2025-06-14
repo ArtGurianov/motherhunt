@@ -16,8 +16,10 @@ import {
 import { useWindowSize } from "@/lib/hooks/useWindowSize";
 import { cn } from "@/lib/utils";
 import { LangSwitcher } from "@/components/LangSwitcher/LangSwitcher";
+import { useTranslations } from "next-intl";
 
 export const Navbar = () => {
+  const t = useTranslations("NAV");
   const [isBurgerMenu, setIsBurgerMenu] = useState(true);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -51,7 +53,7 @@ export const Navbar = () => {
 
   const displayItems = (
     <div className="flex justify-center items-center px-6 gap-4 h-full">
-      {NAVBAR_ITEMS.map(({ href, label }, index) => (
+      {NAVBAR_ITEMS.map(({ href, translationKey }, index) => (
         <NavbarItem
           key={href}
           href={href}
@@ -59,7 +61,7 @@ export const Navbar = () => {
           hoveredIndex={hoveredIndex}
           currentIndex={index}
           onHoverStateChange={(value: number | null) => setHoveredIndex(value)}
-          label={label}
+          translationKey={translationKey}
         />
       ))}
       <div className="flex gap-2 ml-4">
@@ -68,7 +70,7 @@ export const Navbar = () => {
           <Link href="https://app.motherhunt.com" className="h-full">
             <span className="text-3xl flex gap-1 items-center justify-center h-full">
               <ArrowBigRight />
-              {"Platform"}
+              {t("platform-btn-label")}
             </span>
           </Link>
         </Button>
