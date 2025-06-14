@@ -77,7 +77,7 @@ export const NavbarSidebar = ({
               <Link href="https://app.motherhunt.com" className="h-full">
                 <span className="text-4xl flex gap-1 items-center justify-center h-full">
                   <ArrowBigRight />
-                  {"Platform"}
+                  {t("platform-btn-label")}
                 </span>
               </Link>
             </Button>

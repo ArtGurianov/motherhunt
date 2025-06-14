@@ -1,5 +1,11 @@
 {
   "SHARED": {},
+  "ERRORS": {
+    "404": {
+      "message-before": "Got lost?",
+      "message-action": "Just go home"
+    }
+  },
   "NAV": {
     "home": "Home",
     "guides": "Guides",

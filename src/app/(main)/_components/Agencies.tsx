@@ -79,11 +79,11 @@ export const Agencies = async () => {
           </div>
         </Marquee>
       </div>
-      <p className="flex justify-center items-center text-2xl font-mono mt-2 flex-wrap gap-x-4">
+      <p className="flex justify-center items-center text-2xl font-mono mt-2 flex-wrap gap-x-4 gap-y-1 px-4">
         <span className="font-semibold text-foreground/90">
           {t("apply-before")}
         </span>
-        <span>
+        <span className="flex items-center justify-center flex-wrap gap-y-1">
           <Button variant="secondary" className="text-xl font-mono" asChild>
             <Link href="/apply">{t("apply-action")}</Link>
           </Button>

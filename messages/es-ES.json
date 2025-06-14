@@ -1,5 +1,11 @@
 {
   "SHARED": {},
+  "ERRORS": {
+    "404": {
+      "message-before": "¿Te perdiste?",
+      "message-action": "Vámonos a casa"
+    }
+  },
   "NAV": {
     "home": "Inicio",
     "guides": "Guías",
@@ -15,7 +21,7 @@
   "HOME": {
     "HERO": {
       "title-start": "Descubre. Publica.",
-      "title-end": "Concreta. Repite.",
+      "title-end": "Negocia. Repite.",
       "description": "Hemos conectado scouts de las calles de todo el mundo con agencias madre en una revolucionaria subasta web3 para impulsar nuevas caras.",
       "apply-btn-label": "Hazte scout",
       "browse-btn-label": "Ver modelos"

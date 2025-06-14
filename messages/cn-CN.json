@@ -1,5 +1,11 @@
 {
   "SHARED": {},
+  "ERRORS": {
+    "404": {
+      "message-before": "迷路啦？",
+      "message-action": "走，回家吧"
+    }
+  },
   "NAV": {
     "home": "首页",
     "guides": "指南",

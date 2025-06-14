@@ -1,5 +1,11 @@
 {
   "SHARED": {},
+  "ERRORS": {
+    "404": {
+      "message-before": "Потерялся?",
+      "message-action": "Пошли домой"
+    }
+  },
   "NAV": {
     "home": "Главная",
     "guides": "Гайды",
