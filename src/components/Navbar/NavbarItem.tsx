@@ -39,7 +39,7 @@ export const NavbarItem = ({
         <Image
           className="absolute -z-10 top-0 left-0"
           src={
-            (isActive && !hoveredIndex) || hoveredIndex === currentIndex
+            (isActive && hoveredIndex === null) || hoveredIndex === currentIndex
               ? "/capture-btn-active.png"
               : "/capture-btn-inactive.png"
           }

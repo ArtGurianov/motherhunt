@@ -23,7 +23,7 @@ export const LangSwitcher = ({ className }: { className?: string }) => {
             "font-mono text-foreground/80 hover:text-foreground/100",
             {
               "bg-accent-foreground/30 shadow-transparent translate-x-boxShadowX translate-y-boxShadowY":
-                (activeLocale === locale && !hoveredIndex) ||
+                (activeLocale === locale && hoveredIndex === null) ||
                 hoveredIndex === index,
             }
           )}
