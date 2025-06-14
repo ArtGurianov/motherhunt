@@ -36,44 +36,49 @@ export const Agencies = async () => {
   }
 
   return (
-    <PageSection fullWidth>
-      <h2 className="text-3xl font-medium font-mono px-4 mb-1 text-foreground/90">
+    <PageSection className="relative" fullWidth>
+      <h2 className="absolute -translate-y-2/3 left-0 text-4xl font-medium font-mono px-4 text-foreground/90">
         {t("title")}
       </h2>
-      <Marquee>
-        <div className="bg-primary bg-[linear-gradient(to_right,#FF00F9,transparent_1px),linear-gradient(to_bottom,#FF00F9,transparent_1px)] bg-[size:70px_70px] py-2">
-          <div className="flex flex-col justify-start items-center border-background border-y-12 border-dashed py-2">
-            <div className="flex gap-12 pl-12">
-              {agencies.map((agency) => (
-                <Button
-                  asChild
-                  variant="ghost"
-                  size="reset"
-                  key={agency.name}
-                  className="h-48 w-64 relative shrink-0"
-                >
-                  <Link
-                    href={agency.url}
-                    rel="noopener noreferrer"
-                    target="_blank"
+      <div className="relative overflow-clip">
+        <span className="absolute -translate-y-2/3 left-0 z-50 text-4xl font-medium font-mono px-4 text-accent-foreground">
+          {t("title")}
+        </span>{" "}
+        <Marquee>
+          <div className="bg-primary bg-[linear-gradient(to_right,#FF00F9,transparent_1px),linear-gradient(to_bottom,#FF00F9,transparent_1px)] bg-[size:70px_70px] py-2">
+            <div className="flex flex-col justify-start items-center border-background border-y-12 border-dashed py-2">
+              <div className="flex gap-12 pl-12">
+                {agencies.map((agency) => (
+                  <Button
+                    asChild
+                    variant="ghost"
+                    size="reset"
+                    key={agency.name}
+                    className="h-48 w-64 relative shrink-0"
                   >
-                    <Image
-                      key={agency.name}
-                      alt={`logo image for ${agency.name} agency`}
-                      className="h-full w-full object-contain"
-                      src={`https:${agency.logoUrl}`}
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      priority
-                    />
-                  </Link>
-                </Button>
-              ))}
+                    <Link
+                      href={agency.url}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Image
+                        key={agency.name}
+                        alt={`logo image for ${agency.name} agency`}
+                        className="h-full w-full object-contain"
+                        src={`https:${agency.logoUrl}`}
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        priority
+                      />
+                    </Link>
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </Marquee>
+        </Marquee>
+      </div>
       <p className="flex justify-center items-center text-2xl font-mono mt-2 flex-wrap gap-x-4">
         <span className="font-semibold text-foreground/90">
           {t("apply-before")}
