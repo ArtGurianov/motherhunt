@@ -41,5 +41,11 @@
       "apply-action": "Apply here",
       "apply-after": "to join!"
     }
+  },
+  "GUIDES": {
+    "INTRO": "Introduction to scouting",
+    "INSTRUCTIONS": "How to find Models",
+    "SNAPS": "How to take model snapshots",
+    "PLATFORM": "How to use the platform"
   }
 }

@@ -41,5 +41,11 @@
       "apply-action": "Solicita aquí",
       "apply-after": "¡y únete a nosotros!"
     }
+  },
+  "GUIDES": {
+    "INTRO": "Introducción al scouting",
+    "INSTRUCTIONS": "Cómo buscar modelos",
+    "SNAPS": "Cómo tomar fotos de modelos",
+    "PLATFORM": "Cómo usar la plataforma"
   }
 }

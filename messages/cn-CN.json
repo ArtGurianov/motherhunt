@@ -41,5 +41,11 @@
       "apply-action": "点击申请",
       "apply-after": "加入我们！"
     }
+  },
+  "GUIDES": {
+    "INTRO": "星探入门",
+    "INSTRUCTIONS": "如何寻找模特",
+    "SNAPS": "如何拍摄模特照",
+    "PLATFORM": "如何使用平台"
   }
 }
